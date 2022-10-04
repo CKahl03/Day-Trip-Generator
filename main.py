@@ -67,8 +67,4 @@ if answer == 'Y':
     print('Hope you have a safe travel!')
 
 
-print("This is the trip you have selected: ")
-print(random_city(destination_list))
-print(random_entertainment(entertainment_list))
-print(random_restaurant(restaurant_list))
-print(random_transportation(transportation_list))
+print("Enjoy the trip you have selected!")
