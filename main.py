@@ -1,4 +1,5 @@
-import random 
+import random
+from unittest import result 
 
 destination_list = ['Chicago', 'Cincinnati', 'Detroit', 'Indianapolis']
 restaurant_list = ['Wing Stop', 'Longhorns', 'Four Day Ray', 'Kilroys']
@@ -7,19 +8,19 @@ entertainment_list = ['Comedy Show', 'Concert', 'Trade Show', 'Golfing']
 
 def random_city(destination_list):
     random_city = random.choice(destination_list)
+    print(random_city)
     return random_city
 print("City: " + str(random.choice(destination_list)))
 
 print("Do you like your chosen Destination? Y or N")
 answer = input('')
-while answer == 'N':
+if answer == 'N':
     print(random_city(destination_list))
     print("Do you like your chosen destination? Y or N")
     answer = input('')
-if answer == 'Y':
-    print('Have fun!!') 
+elif answer == 'Y':
+    print("I like that place!"
 
-print(random_city(destination_list))
 
 def random_entertainment(entertainment_list):
     random_entertainment = random.choice(entertainment_list)
