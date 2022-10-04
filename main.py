@@ -1,29 +1,73 @@
+import random 
 
-# Lists with data
 destination_list = ['Chicago', 'Cincinnati', 'Detroit', 'Indianapolis']
 restaurant_list = ['Wing Stop', 'Longhorns', 'Four Day Ray', 'Kilroys']
 transportation_list = ['Party Bus', 'Personal Car', 'Rental Car', 'Motorycles']
-entertainment_list = ['Colts Game', 'Bears Game', 'Lions Game', 'Bengals Game']
-    
+entertainment_list = ['Comedy Show', 'Concert', 'Trade Show', 'Golfing']
 
-import random 
+def random_city(destination_list):
+    random_city = random.choice(destination_list)
+    return random_city
+print("City: " + str(random.choice(destination_list)))
 
-random_city = random.choice(destination_list)
-print("Destination City is: " + str(random_city))
+print("Do you like your chosen Destination? Y or N")
+answer = input('')
+while answer == 'N':
+    print(random_city(destination_list))
+    print("Do you like your chosen destination? Y or N")
+    answer = input('')
+if answer == 'Y':
+    print('Have fun!!') 
 
-if random_city == "Chicago":
-    print("Entertainment: Bears Game")
-if random_city == "Cincinnati":
-    print("Entertainment: Bengals Game")
-if random_city == "Detroit":
-    print("Entertainment: Lions Game")
-if random_city == "Indianapolis":
-    print("Entertainment: Colts Game")
+print(random_city(destination_list))
 
-random_restaurant = random.choice(restaurant_list)
-print("Restaurant: " + str(random_restaurant))
+def random_entertainment(entertainment_list):
+    random_entertainment = random.choice(entertainment_list)
+    return random_entertainment
+print("Entertainment: " + str(random.choice(entertainment_list)))
 
-random_transportation = random.choice(transportation_list)
-print("Transportation: " + str(random_transportation))
+print("Do you like your chosen Entertainment? Y or N")
+answer = input('')
+while answer == 'N':
+    print(random_entertainment(entertainment_list))
+    print("Do you like your chosen Entertainment? Y or N")
+    answer = input('')
+if answer == 'Y':
+    print('Have fun!') 
 
 
+def random_restaurant(restaurant_list):
+    random_restaurant = random.choice(restaurant_list)
+    return random_restaurant
+print("Restaurant: " + str(random.choice(restaurant_list)))
+
+print("Do you like the restaurant that was chosen? Y or N")
+answer = input('')
+while answer == 'N':
+    print(random_restaurant(restaurant_list))
+    print("Do you like the restaurant that was chosen? Y or N")
+    answer = input('')
+if answer == 'Y':
+    print('Hope you enjoy the restaurant!')
+
+
+def random_transportation(transportation_list):
+    random_transportation = random.choice(transportation_list)
+    return random_transportation
+print("Mode of transportation: " + str(random.choice(transportation_list)))
+
+print("Do you like this mode of transportation?: Y or N")
+answer = input('')
+while answer == 'N':
+    print(random_transportation(transportation_list))
+    print("Do you like this mode of transportation that was chosen? Y or N")
+    answer = input('')
+if answer == 'Y':
+    print('Hope you have a safe travel!')
+
+
+print("This is the trip you have selected: ")
+print(random_city(destination_list))
+print(random_entertainment(entertainment_list))
+print(random_restaurant(restaurant_list))
+print(random_transportation(transportation_list))
