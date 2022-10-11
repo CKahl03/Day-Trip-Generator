@@ -6,65 +6,77 @@ restaurant_list = ['Wing Stop', 'Longhorns', 'Four Day Ray', 'Kilroys']
 transportation_list = ['Party Bus', 'Personal Car', 'Rental Car', 'Motorycles']
 entertainment_list = ['Comedy Show', 'Concert', 'Trade Show', 'Golfing']
 
-def random_city(destination_list):
-    random_city = random.choice(destination_list)
-    print(random_city)
-    return random_city
-print("City: " + str(random.choice(destination_list)))
+print("Welcome to your Day Trip Generator! You will be randomly selected a City, Restaurant, Entertainment and Vehicle.")
 
-print("Do you like your chosen Destination? Y or N")
-answer = input('')
-if answer == 'N':
-    print(random_city(destination_list))
-    print("Do you like your chosen destination? Y or N")
+def random_picker(list):
+    random_item = random.choice(list)
+    return random_item
+
+def destination():
+    random_dest = random_picker(destination_list)
+    print("City: " + random_dest)
+    print("Do you like your chosen Destination? Y or N")
     answer = input('')
-elif answer == 'Y':
-    print("I like that place!"
+    while answer == 'N':
+        if answer == 'N':
+            random_dest = random_picker(destination_list)
+            print(f'How about {random_dest}')
+            print("Do you like your chosen destination? Y or N")
+            answer = input('')
+    if answer == 'Y':
+        print(f'I like {random_dest}')
+        return random_dest
 
-
-def random_entertainment(entertainment_list):
-    random_entertainment = random.choice(entertainment_list)
-    return random_entertainment
-print("Entertainment: " + str(random.choice(entertainment_list)))
-
-print("Do you like your chosen Entertainment? Y or N")
-answer = input('')
-while answer == 'N':
-    print(random_entertainment(entertainment_list))
+def entertainment():
+    random_fun = random_picker(entertainment_list)
+    print("Entertainment: " + random_fun)
     print("Do you like your chosen Entertainment? Y or N")
     answer = input('')
-if answer == 'Y':
-    print('Have fun!') 
+    while answer == 'N':
+        if answer == 'N':
+            random_fun = random_picker(entertainment_list)
+            print(f'How about {random_fun}')
+            print("Do you like your chosen Entertainment? Y or N")
+            answer = input('')
+    if answer == 'Y':
+        print("Have fun!")
+        return random_fun
 
-
-def random_restaurant(restaurant_list):
-    random_restaurant = random.choice(restaurant_list)
-    return random_restaurant
-print("Restaurant: " + str(random.choice(restaurant_list)))
-
-print("Do you like the restaurant that was chosen? Y or N")
-answer = input('')
-while answer == 'N':
-    print(random_restaurant(restaurant_list))
-    print("Do you like the restaurant that was chosen? Y or N")
+def transportation():
+    random_vehicle = random_picker(transportation_list)
+    print("Vehcile: " + random_vehicle)
+    print("Do you like your chosen Entertainment? Y or N")
     answer = input('')
-if answer == 'Y':
-    print('Hope you enjoy the restaurant!')
+    while answer == 'N':
+        if answer == 'N':
+            random_vehicle = random_picker(transportation_list)
+            print(f'How about {random_vehicle}')
+            print("Do you like your chosen vehicle? Y or N")
+            answer = input('')
+    if answer == 'Y':
+        print("Drive Safe!")
+        return random_vehicle
 
-
-def random_transportation(transportation_list):
-    random_transportation = random.choice(transportation_list)
-    return random_transportation
-print("Mode of transportation: " + str(random.choice(transportation_list)))
-
-print("Do you like this mode of transportation?: Y or N")
-answer = input('')
-while answer == 'N':
-    print(random_transportation(transportation_list))
-    print("Do you like this mode of transportation that was chosen? Y or N")
+def restaurant():
+    random_eatery = random_picker(restaurant_list)
+    print("Restaurant: " + random_eatery)
+    print("Do you like your chosen Restaurant? Y or N")
     answer = input('')
-if answer == 'Y':
-    print('Hope you have a safe travel!')
+    while answer == 'N':
+        if answer == 'N':
+            random_eatery = random_picker(restaurant_list)
+            print(f'How about {random_eatery}')
+            print("Do you like your chosen restaurant? Y or N")
+            answer = input('')
+    if answer == 'Y':
+        print(f'Enjoy {random_eatery}!')
+        return random_eatery
 
+confirmed_dest = destination()  
+confirmed_ent = entertainment()
+confirmed_vehicle = transportation()
+confirmed_eatery = restaurant()
+full_trip = confirmed_dest, confirmed_vehicle, confirmed_ent, confirmed_eatery
 
-print("Enjoy the trip you have selected!")
+print(f'Thank you for confirming all of your choices.')
+print(full_trip)
